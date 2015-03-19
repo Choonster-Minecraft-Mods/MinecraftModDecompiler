@@ -12,9 +12,9 @@ JD itself supports:
 - Mac OSX 32/64-bit on x86 hardware
 
 ## Build
-Clone the repository and run `gradlew build`. This will download the required dependencies and generate a JAR file in the `build/libs` directory.
-
-You can also run `gradlew shadowJar` to generate a stand-alone JAR with all dependencies included in it.
+Clone the repository and run `gradlew build`. This will generate two JAR files in the `build/libs` directory:
+- `MinecraftModDecompiler-<version>.jar`, which contains only this tool
+- `MinecraftModDecompiler-<version>-withdeps.jar`, which contains this tool and all of its dependencies
 
 The `idea` and `eclipse` Gradle plugins are included in the build script, so you can run `gradlew idea` or `gradlew eclipse` to generate an IDE project.
 

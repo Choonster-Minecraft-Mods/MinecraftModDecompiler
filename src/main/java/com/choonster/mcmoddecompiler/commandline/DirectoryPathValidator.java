@@ -13,7 +13,7 @@ public class DirectoryPathValidator implements IParameterValidator {
 	public void validate(String name, String value) throws ParameterException {
 		Path path = Paths.get(value);
 		if (!Files.isDirectory(path)) {
-			throw new ParameterException("Parameter " + name + " must be a directory");
+			throw new ParameterException("Parameter " + name + " (" + String.valueOf(value) + ") must be a directory");
 		}
 	}
 }

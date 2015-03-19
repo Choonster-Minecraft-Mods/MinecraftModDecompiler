@@ -17,17 +17,23 @@ repositories {
     mavenCentral()
 }
 
-shadowJar {
-    classifier = 'standalone'
-}
-
-group = "com.choonster.mcmoddecompiler" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-
 dependencies {
     compile 'com.beust:jcommander:1.30'
     compile 'com.opencsv:opencsv:3.3'
     compile files('libs/jd-core-java-1.2.jar')
 }
 
-version = "1.0"
-//archivesBaseName = "MinecraftModDecompiler"
+shadowJar {
+    classifier = 'withdeps'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.choonster.mcmoddecompiler.Main'
+    }
+}
+
+build.dependsOn shadowJar
+
+group = 'com.choonster.mcmoddecompiler' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = '1.0'
