@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.0'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+    mavenCentral()
+}
+
+shadowJar {
+    classifier = 'standalone'
+}
+
+group = "com.choonster.mcmoddecompiler" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+
+dependencies {
+    compile 'com.beust:jcommander:1.30'
+    compile 'com.opencsv:opencsv:3.3'
+    compile files('libs/jd-core-java-1.2.jar')
+}
+
+version = "1.0"
+//archivesBaseName = "MinecraftModDecompiler"
