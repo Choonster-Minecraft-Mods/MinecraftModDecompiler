@@ -1,3 +1,6 @@
+# Discontinued
+This project has been discontinued. I recommend using [BON2](https://github.com/tterrag1098/BON2) to deobfuscate mods and a regular Java decompiler to decompile them.
+
 # Minecraft Mod Decompiler
 Decompiles and deobfuscates all Minecraft Forge mods in a specified directory and outputs the source files to another directory.
 
